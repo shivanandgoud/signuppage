@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        body {
+
+            display: flex;
+            justify-content: center;
+            background: #07252d;
+        }
+
+        h2 {
+            position: relative;
+            font-size: 6em;
+            color: #0e3742;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            -webkit-box-reflect: below -42px linear-gradient
+            (transparent,#0004);
+margin-top: 80px;
+margin-left: 250px;
+        }
+
+        h2 span {
+            animation: animates 5s linear infinite;
+        }
+        h2 span:nth-child(even)
+        {
+            animation-delay: 0.4s;
+        }
+        @keyframes animates
+        {
+
+            0%,
+            18%,
+            20%,
+            50.1%,
+            60%,
+            65.1%,
+            80%,
+            90.1%,
+            92% {
+                color: #0e3742;
+                text-shadow: none;
+            }
+
+            18.1%,
+            20.1%,
+            30%,
+            50%,
+            60.1%,
+            65%,
+            80.1%,
+            90%,
+            92.1%,
+            100% {
+                color: #fff;
+                text-shadow: 0 0 10px #03bcf4,
+                    0 0 20px #03bcf4,
+                    0 0 40px #03bcf4,
+                    0 0 80px #03bcf4,
+                    0 0 160px #03bcf4,
+                    0 0 400px #03bcf4;
+            }
+        }
+        
+        /*second animation*/
+       .shadow{
+            position: relative;
+            margin: 200px auto 0;
+            width: 400px;
+       height: 250px;
+       background: linear-gradient(0deg,#000,#262626);
+       margin-left: -400px;
+       margin-top: 300px;
+        }
+
+    
+    .shadow:before
+    {
+        content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
+background-size: 400%;
+width: calc(100% + 4px);
+height: calc(100% + 4px);
+z-index: -1;
+animation: animate 20s linear infinite;
+}
+.shadow:after{
+    
+    filter: blur(20px);
+}
+@keyframes animate
+{
+    0%
+    {
+        background-position: 0 0;
+    }
+    50%
+    {
+        background-position: 300% 0;
+    }
+    100%
+    {
+        background-position: 0 0;
+    }
+}
+input{
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    text-align: center;
+    align-items: center;
+    margin-left: 80px;
+}
+.btn{
+    background-color: #00ff00;
+    cursor: pointer;
+    color: #fb0094;
+}
+.sub{
+    width: 150px;
+    height: 50px;
+    color: #c3d69f;
+    background-color: #fb0094;
+    margin-left: 130px;
+    margin-top: 50px;
+}
+    </style>
+   
+</head>
+<body>
+    <div class="diwali" >
+<h2>
+    <span>WELCOME TO</span><br><span>OUR WEBSITE</span>
+</h2></div>
+<div class="shadow">
+    <form name="myform" method="post" action="shiva.html" onsubmit="return validateform()">
+        
+    <input type="text" name="name" placeholder="Enter name"><br>
+     <input type="password" name="password" placeholder="Enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
+  <input class="sub" type="submit" value="register">
+</form>
+</div>
+<script>
+    function validateform(){
+        var name=document.myform.name.value;
+        var password=document.myform.password.value;
+    
+        if(name==null||name==""){
+            alert("name can't be blank" );
+            return false;
+            
+        }else if(password.length<6){
+            alert(  " password must be atleast 6 characters long.");
+        return false;
+        }
+    }
+</script>
+</body>
+</html>

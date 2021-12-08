@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sign in</title>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">
+	
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.full-page {
+			height: 100%;
+			width: 100%;
+			background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://github.com/shivanandgoud/frontendshiva/blob/main/1635854091482.jpg?raw=true);
+			background-position: center;
+			background-size: cover;
+			position: absolute;
+		}
+
+		.navbar {
+			display: flex;
+			align-items: center;
+			padding: 20px;
+			padding-left: 50px;
+			padding-right: 30px;
+			padding-top: 50px;
+		}
+
+		nav {
+			flex: 1;
+			text-align: right;
+			flex-wrap: wrap;
+		}
+
+		#MenuItems.show {
+			display: flex;
+		}
+
+		nav ul {
+			display: inline-block;
+			list-style: none;
+		}
+
+		nav ul li {
+			display: inline-block;
+			margin-right: 70px;
+		}
+
+		nav ul li a {
+			text-decoration: none;
+			font-size: 20px;
+			color: white;
+			font-family: sans-serif;
+		}
+
+		nav ul li button {
+			font-size: 20px;
+			color: white;
+			outline: none;
+			border: none;
+			background: transparent;
+			cursor: pointer;
+			font-family: sans-serif;
+		}
+
+		nav ul li button:hover {
+			color: aqua;
+		}
+
+		nav ul li a:hover {
+			color: aqua;
+		}
+
+		a {
+			text-decoration: none;
+			color: palevioletred;
+			font-size: 28px;
+		}
+
+		#login-form {
+			display: none;
+		}
+
+		.form-box {
+			width: 380px;
+			height: 480px;
+			position: relative;
+			margin: 2% auto;
+			background: rgba(0, 0, 0, 0.3);
+			padding: 10px;
+			overflow: hidden;
+		}
+
+		.button-box {
+			width: 220px;
+			margin: 35px auto;
+			position: relative;
+			box-shadow: 0 0 20px 9px #ff61241f;
+			border-radius: 30px;
+		}
+
+		.toggle-btn {
+			padding: 10px 30px;
+			cursor: pointer;
+			background: transparent;
+			border: 0;
+			outline: none;
+			position: relative;
+		}
+
+		#btn {
+			top: 0;
+			left: 0;
+			position: absolute;
+			width: 110px;
+			height: 100%;
+			background: #F3C693;
+			border-radius: 30px;
+			transition: .5s;
+		}
+
+		.input-group-login {
+			top: 150px;
+			position: absolute;
+			width: 280px;
+			transition: .5s;
+		}
+
+		.input-group-register {
+			top: 120px;
+			position: absolute;
+			width: 280px;
+			transition: .5s;
+		}
+
+		.input-field {
+			width: 100%;
+			padding: 10px 0;
+			margin: 5px 0;
+			border-left: 0;
+			border-top: 0;
+			border-right: 0;
+			border-bottom: 1px solid #999;
+			outline: none;
+			background: transparent;
+		}
+
+		.submit-btn {
+			width: 85%;
+			padding: 10px 30px;
+			cursor: pointer;
+			display: block;
+			margin: auto;
+			background: #F3C693;
+			border: 0;
+			outline: none;
+			border-radius: 30px;
+		}
+
+		.check-box {
+			margin: 30px 10px 34px 0;
+		}
+
+		span {
+			color: #777;
+			font-size: 12px;
+			bottom: 68px;
+			position: absolute;
+		}
+
+		#login {
+			left: 50px;
+		}
+
+		#login input {
+			color: white;
+			font-size: 15;
+		}
+
+		#register {
+			left: 450px;
+		}
+
+		#register input {
+			color: white;
+			font-size: 15;
+		}
+
+		.hamburger {
+			background-color: transparent;
+			border: 0;
+			color: #fff;
+			font-size: 20px;
+			cursor: pointer;
+			display: none;
+			margin-left: 200px;
+		}
+
+		.hamburger:focus {
+			outline: none;
+		}
+		@media screen and (min-width:1200px) and (max-width:800px) {
+			.full-page {
+				height: 100%;
+				width: 100%;
+				background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://scontent.fhyd11-2.fna.fbcdn.net/v/t1.6435-9/s600x600/183317326_950828745717869_2064673469644252651_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=Rx1UpwrdehwAX-G7bgi&_nc_ht=scontent.fhyd11-2.fna&oh=16ced11e38b32124ea866eaefd4830ba&oe=61A9D1DF);
+				background-position: center;
+				background-size: cover;
+				position: absolute;
+			}
+		}
+		
+
+		@media screen and (min-width:799px) and (max-width:500px) {
+			.full-page {
+				height: 100%;
+				width: 100%;
+				background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://scontent.fhyd11-2.fna.fbcdn.net/v/t1.6435-9/s600x600/183317326_950828745717869_2064673469644252651_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=Rx1UpwrdehwAX-G7bgi&_nc_ht=scontent.fhyd11-2.fna&oh=16ced11e38b32124ea866eaefd4830ba&oe=61A9D1DF);
+				background-position: center;
+				background-size: cover;
+				position: absolute;
+			}
+		}
+
+		@media screen and (min-width:460px) and (max-width:576px) {
+			#MenuItems {
+				display: none;
+				width: 100%;
+				flex-direction: column;
+				padding: 30px;
+				margin-bottom: 20p;
+			}
+
+			.hamburger {
+				display: block;
+			}
+
+			.full-page {
+				height: 100%;
+				width: 100%;
+				background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://scontent.fhyd14-1.fna.fbcdn.net/v/t1.6435-9/s600x600/180529976_946684406132303_5696242823071886646_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=730e14&_nc_ohc=U-anFvZ34bUAX8eJ8Bv&tn=tD8hdE9qBOOt1WLH&_nc_ht=scontent.fhyd14-1.fna&oh=294d85440538b5983baa8501cfadc8bd&oe=61D2CB18);
+				background-position: center;
+				background-size: cover;
+				position: absolute;
+			}
+
+			* {
+				margin: 10;
+				padding: 10px;
+				box-sizing: border-box;
+			}
+		}
+
+		
+
+		
+	</style>
+</head>
+
+<body>
+	
+	
+	<div class="full-page">
+		<div class="navbar">
+			<div>
+				<a href="https://www.facebook.com/shivanand.mukupogula"><img
+						src="https://github.com/shivanandgoud/png-images/blob/main/facebook%20round%20(1).png?raw=true"
+						alt="facebook-icon" role='icon' aria-label='facebook icon'></a>
+				<a href="https://www.youtube.com/channel/UCJGSfhdtpWrp508TNXL3tdg"><img
+						src="https://github.com/shivanandgoud/png-images/blob/main/Group%202500.png?raw=true"
+						alt="youtube-icon" role='icon' aria-label='youtube icon'></a>
+				<a href="https://twitter.com/stdtsvcsmdcps?lang=en"><img
+						src="https://github.com/shivanandgoud/png-images/blob/main/twitter%20round.png?raw=true"
+						alt="twitter-icon" role='icon' aria-label='twitter icon'></a>
+			</div>
+
+			<nav>
+				<button class="hamburger" id="hamburger">
+					<i class="fa fa-bars"></i>
+				</button>
+				<ul id='MenuItems'>
+					<li><a href='profile.html'>Profile</a></li>
+					<li><a href='gallery.html'>Galley</a></li>
+					<li><a href='team.html'>Team Members</a></li>
+					<li><a href='#'>Contact</a></li>
+					<li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'"
+							style="width:auto;">Sign In</button></li>
+				</ul>
+			</nav>
+		</div>
+		<div id='login-form' class='login-page'>
+			<div class="form-box">
+				<div class='button-box'>
+					<div id='btn'></div>
+					<button type='button' onclick='login()' class='toggle-btn'>Log In</button>
+					<button type='button' onclick='register()' class='toggle-btn'>Register</button>
+				</div>
+				<form id='login' class='input-group-login'>
+					<input type='text' class='input-field' placeholder='Email Id' required>
+					<input type='password' class='input-field' placeholder='Enter Password' required>
+					<input type='checkbox' class='check-box'><span>Remember Password</span>
+					<button type='submit' class='submit-btn'>Log in</button>
+				</form>
+				<form id='register' class='input-group-register'>
+					<input type='text' class='input-field' placeholder='First Name' required>
+					<input type='text' class='input-field' placeholder='Last Name ' required>
+					<input type='email' class='input-field' placeholder='Email Id' required>
+					<input type='password' class='input-field' placeholder='Enter Password' required>
+					<input type='password' class='input-field' placeholder='Confirm Password' required>
+					<input type='checkbox' class='check-box'><span>I agree to the terms and conditions</span>
+					<button type='submit' class='submit-btn'>Register</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+		var x = document.getElementById('login');
+		var y = document.getElementById('register');
+		var z = document.getElementById('btn');
+
+		function register() {
+			x.style.left = '-400px';
+			y.style.left = '50px';
+			z.style.left = '110px';
+		}
+
+		function login() {
+			x.style.left = '50px';
+			y.style.left = '450px';
+			z.style.left = '0px';
+		}
+	</script>
+	<script>
+		var modal = document.getElementById('login-form');
+		window.onclick = function (event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+	<script>
+		const hamburger = document.getElementById('hamburger');
+		const navUl = document.getElementById('MenuItems');
+		hamburger.addEventListener('click', () => {
+			navUl.classList.toggle('show');
+		});
+	</script>
+</body>
+
+</html>

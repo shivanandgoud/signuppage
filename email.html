@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {list-style-type: none;
+font-size: 16pt;
+}
+.mail {
+margin: auto;
+padding-top: 10px;
+padding-bottom: 10px;
+width: 800px;
+background : rgb(153, 198, 211);
+border: 1px soild rgb(1, 20, 24);
+}
+.mail h2 {
+margin-left: 38px;
+}
+input {
+font-size: 20pt;
+}
+input:focus, textarea:focus{
+background-color: lightyellow;
+}
+input submit {
+font-size: 10pt;
+}
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript email validation</title>
+<link rel='stylesheet' href='form-style.css' type='text/css' />   //link to the source file of css to add styles
+</head>
+<body onload='document.form1.text1.focus()'>
+<div class="mail">
+<h2>Enter email to Validate</h2>
+<form name="form1" action="#">
+<ul>
+<li><input type='text' name='text1'/></li>
+<li> </li>
+<li class="Validate"><input type="submit" name="Validate" value="Validate" onclick="ValidateEmail(document.form1.text1)"/></li>  //Adding the submit button
+<li> </li>
+</ul>
+</form>
+</div>
+<script src="email-validation.js"></script>    //link to the source file of javascript function
+</body>
+</html>
+    <script>
+        function ValidateEmail(input) {
+
+var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+if (input.value.match(validRegex)) {
+
+  alert("Valid email address!");
+
+  document.form1.text1.focus();
+
+  return true;
+
+} else {
+
+  alert("Invalid email address!");
+
+  document.form1.text1.focus();
+
+  return false;
+
+}
+
+}
+    </script>
+</body>
+</html>
